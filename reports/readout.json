@@ -23,22 +23,22 @@
   },
   "balance": {
     "smd": {
-      "f0": -0.006865619284389811,
-      "f1": 0.0239943939767806,
-      "f2": -0.006240988897816135,
-      "f3": -0.04883634033708873,
-      "f4": 0.007965660618610286,
-      "f5": -0.030556830393816153,
-      "f6": -0.04044806880267142,
-      "f7": 0.0212695301514096,
-      "f8": -0.022433336149548535,
-      "f9": 0.024001057716329415,
-      "f10": 0.010563462895780421,
-      "f11": -0.005159528336814784
+      "f0": -0.0068656192843694445,
+      "f1": 0.02399439397678032,
+      "f2": -0.006240988897816907,
+      "f3": -0.048836340337088384,
+      "f4": 0.00796566061854262,
+      "f5": -0.03055683039381873,
+      "f6": -0.04044806880267347,
+      "f7": 0.021269530151352634,
+      "f8": -0.0224333361495453,
+      "f9": 0.024001057716330886,
+      "f10": 0.010563462895828456,
+      "f11": -0.005159528336791689
     },
-    "max_abs_smd": 0.04883634033708873,
+    "max_abs_smd": 0.048836340337088384,
     "smd_se_under_randomization": 0.000749027586326405,
-    "max_abs_smd_z": 65.199655164379,
+    "max_abs_smd_z": 65.19965516437854,
     "n_features_abs_smd_over_0_1": 0,
     "treatment_predictability_auc": {
       "auc": 0.5105766360895712,
@@ -218,11 +218,11 @@
         "covariance_term": "included"
       },
       "cace_adjusted": {
-        "estimate": 0.19562742097684366,
-        "se": 0.0033837055359339603,
-        "ci_low": 0.1889954799921243,
-        "ci_high": 0.20225936196156302,
-        "relative_to_control": 4.7856400410938225,
+        "estimate": 0.20634146106824983,
+        "se": 0.0035361035596735506,
+        "ci_low": 0.19941082544568578,
+        "ci_high": 0.21327209669081387,
+        "relative_to_control": 5.096856597792089,
         "covariance_term": "omitted"
       }
     },
@@ -267,11 +267,11 @@
         "covariance_term": "included"
       },
       "cace_adjusted": {
-        "estimate": 0.02745708447561766,
-        "se": 0.000893299340104909,
-        "ci_low": 0.02570624994159864,
-        "ci_high": 0.02920791900963668,
-        "relative_to_control": 13.324420413666155,
+        "estimate": 0.027730930735869554,
+        "se": 0.000933382107958464,
+        "ci_low": 0.025901535420456888,
+        "ci_high": 0.02956032605128222,
+        "relative_to_control": 13.540694692110733,
         "covariance_term": "omitted"
       }
     }
@@ -908,7 +908,9 @@
       ]
     }
   },
-  "primary_estimator": "cupac_plus_lin",
-  "runtime_seconds": 419.0,
-  "peak_ram_gb": 2.09
+  "primary_effect_estimator": "aipw",
+  "primary_effect_reason": "assignment is only conditionally random (pooled tests), so the doubly-robust AIPW with a cross-fitted propensity is the effect estimate of record",
+  "primary_variance_reduction_estimator": "cupac_plus_lin",
+  "runtime_seconds": 478.9,
+  "peak_ram_gb": 2.04
 }
