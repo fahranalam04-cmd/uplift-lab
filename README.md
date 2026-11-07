@@ -62,7 +62,17 @@ Full population (13,979,592 users), CPU only, 4 threads, peak RAM 2.0 GB [`reado
 | A/A false-positive rate, 10,000 sims | α = 5% | Welch 5.09%, CUPAC 4.91% (visit) [`simulations.json: aa`] |
 | Peeking, 1,000 looks, 5,000 A/A sims | Fixed-horizon test: 65.6% FPR | mSPRT: **2.34%** FPR [`peeking`] |
 | Power calculator vs simulation | - | max gap 1.1 pts (Welch), 0.5 pts (CUPAC) [`power`] |
-{UPLIFT_ROWS}
+| Visit targeting: share of incremental visits captured by top 30% (test n = 5,591,832) | Random 30%; response model 85.2% (83.6-86.6) | Transformed outcome (chosen on val) **86.3%** (84.2-87.8) [`uplift.json: visit.test_bootstrap`] |
+| Visit targeting, top 10% | Random 9.4%; response model 49.7% | Transformed outcome 59.5%; S-learner 63.0% [`visit.test.*.capture_at_10`] |
+| Visit Qini AUC (normalized) | Random 0.0001; response model 0.0855 | Transformed outcome 0.0862 (0.0816-0.0913); best on test S-learner 0.0924 [`visit.test`] |
+| Conversion targeting, top 30% | Response model 92.1% (90.2-94.1) | S-learner (chosen on val) 90.5% (88.0-92.9): **no gain over the response model** [`conversion.test_bootstrap`] |
+
+**How to read the uplift rows:** every uplift learner beats random targeting by a wide margin. At a
+30% budget, though, they do not beat the honest baseline of ranking users by predicted visit
+probability; the bootstrap CIs overlap. Uplift models only help at the very top of the ranking (top
+10% for visit). This is consistent with most of the uplift heterogeneity on Criteo following baseline visit propensity. Rows are
+test-split numbers for configs and models chosen on validation; IPW-weighted versions are in
+`uplift.json: *.test_ipw_weighted`.
 
 ![CI comparison](reports/figures/ci_comparison.png)
 ![Peeking](reports/figures/peeking_fpr.png)
@@ -110,7 +120,8 @@ fast CPU-only suite (no downloads). Individual stages: `uplift-lab prepare|reado
 * **The CUPAC covariate is fit on in-experiment outcomes** (cross-fitted; there is no pre-period).
   That is valid, but it is not the textbook pre-period CUPED.
 * **mSPRT is conservative** (A/A FPR 2.34%) and less powerful at a fixed horizon (55.9% vs 79.8%).
-* **Uplift tuning is small:** two LightGBM configs per learner, training on a 50% sample of the
+* **Uplift models do not beat a response model at a 30% budget** (CIs overlap; for conversion the
+  response model is ahead). Tuning is also small: two LightGBM configs per learner, trained on a 50% sample of the
   train split.
 * **CI is not yet run.** `.github/workflows/ci.yml` has never run on GitHub (local only, no
   remote). Ruff and pytest pass locally.
