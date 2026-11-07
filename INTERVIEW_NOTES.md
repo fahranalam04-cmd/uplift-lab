@@ -94,8 +94,8 @@ here, because visit uplift scales with baseline visit propensity.
   the train split is a 50% sample (RAM and time on a shared laptop).
 * **Variance formula.** Lin/CUPAC SEs use the asymptotic (Neyman / influence-function) formula, not
   HC2. Tests show they agree within 2% at n = 3,000.
-* **CI is not yet run.** `.github/workflows/ci.yml` has never run on GitHub (no remote exists).
-  Locally, ruff and pytest pass.
+* **CI covers the library, not the analysis.** ruff + pytest pass on GitHub with small fixtures; the
+  full 13.98M-row pipeline has only been run locally, stage by stage.
 
 ## 10 likely questions
 

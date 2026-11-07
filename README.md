@@ -123,6 +123,7 @@ fast CPU-only suite (no downloads). Individual stages: `uplift-lab prepare|reado
 * **Uplift models do not beat a response model at a 30% budget** (CIs overlap; for conversion the
   response model is ahead). Tuning is also small: two LightGBM configs per learner, trained on a 50% sample of the
   train split.
-* **CI is not yet run.** `.github/workflows/ci.yml` has never run on GitHub (local only, no
-  remote). Ruff and pytest pass locally.
+* **CI passes on GitHub.** `.github/workflows/ci.yml` (ruff + pytest) passed on its first run
+  ([run 42404148346](https://github.com/fahranalam04-cmd/uplift-lab/actions/runs/42404148346), 2026-11-07). It uses small fixtures and
+  does not re-run the 13.98M-row pipeline.
 * The Streamlit app is tested headlessly with `streamlit.testing.AppTest`; it is not deployed.
