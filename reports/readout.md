@@ -8,6 +8,7 @@
 * SRM passes, but the features predict treatment (AUC 0.511, CI excludes 0.5), and adjustment moves the estimate by far more than chance. Without a balance check this would have been missed.
 * Cross-fitted CUPAC + linear adjustment narrows the visit CI by 17.0%, the same precision as 31.1% more users.
 * Simulations on real outcomes: A/A FPR 5.09% over 10,000 sims; peeking 1000 times inflates FPR to 65.6%, while the mSPRT holds it at 2.34%.
+* Targeting: the top 30% by Transformed outcome captures 86.3% of incremental visits on the test split (random: 30%).
 
 ## 1. Design and guardrails
 
@@ -81,6 +82,36 @@ The mSPRT, checked at all 1000 looks, has FPR **2.34%** (1.96%-2.80%), versus **
 | 400,000 | 99.4% | 99.6% | 100.0% | 99.9% |
 
 Max |analytic - simulated| = 1.1 points (Welch) and 0.5 points (CUPAC, using the R^2 measured in the readout as the calculator's variance-reduction input).
+
+## 5. Heterogeneous effects: who should we target?
+
+Stratified split by (treatment, visit): train 2,796,378 users (a 50% sample of the train buckets), validation 2,795,917, test 5,591,832. LightGBM base learners; 2 configs per learner chosen on validation Qini; the final model is chosen on validation and scored on test once.
+
+### Visit (test ATE 1.034 pp)
+
+| Model | Qini AUC | Qini AUC (IPW) | Uplift@10% | Uplift@30% | Captured@10% | Captured@30% | Captured@30% (IPW) |
+|---|---|---|---|---|---|---|---|
+| S-learner | 0.0924 | 0.0770 | 6.52 pp | 2.97 pp | 63.0% | 86.2% | 94.7% |
+| X-learner | 0.0884 | 0.0708 | 6.07 pp | 2.95 pp | 58.6% | 85.5% | 90.5% |
+| Transformed outcome (chosen on val) | 0.0862 | 0.0692 | 6.16 pp | 2.97 pp | 59.5% | 86.3% | 92.0% |
+| Response model (baseline) | 0.0855 | 0.0728 | 5.14 pp | 2.94 pp | 49.7% | 85.2% | 93.9% |
+| T-learner | 0.0808 | 0.0642 | 5.88 pp | 2.88 pp | 56.9% | 83.4% | 87.6% |
+| Random targeting (baseline) | 0.0001 | 0.0001 | 0.97 pp | 1.04 pp | 9.4% | 30.2% | 30.4% |
+
+**Business read (visit):** treating only the top 30% of users ranked by the Transformed outcome captures **86.3%** of all incremental visits (Poisson bootstrap 95% CI 84.2%-87.8%, 100 reps). Random targeting captures 30% by construction; ranking by the response model captures 85.2% (83.6%-86.6%). The intervals overlap, so at a 30% budget the uplift model is not clearly better than the response baseline. At a 10% budget the uplift model is ahead: Transformed outcome 59.5% vs response model 49.7% (best learner on test: S-learner, Qini 0.0924). On this dataset most of the heterogeneity in uplift follows baseline propensity.
+
+### Conversion (test ATE 0.116 pp)
+
+| Model | Qini AUC | Qini AUC (IPW) | Uplift@10% | Uplift@30% | Captured@10% | Captured@30% | Captured@30% (IPW) |
+|---|---|---|---|---|---|---|---|
+| Response model (baseline) | 0.1920 | 0.1855 | 0.85 pp | 0.36 pp | 73.4% | 92.1% | 96.7% |
+| S-learner (chosen on val) | 0.1836 | 0.1755 | 0.82 pp | 0.35 pp | 70.5% | 90.5% | 94.2% |
+| X-learner | 0.1617 | 0.1531 | 0.79 pp | 0.33 pp | 68.4% | 85.1% | 87.5% |
+| Transformed outcome | 0.1455 | 0.1357 | 0.79 pp | 0.32 pp | 68.4% | 82.3% | 84.2% |
+| T-learner | 0.1331 | 0.1272 | 0.75 pp | 0.31 pp | 64.3% | 79.9% | 82.5% |
+| Random targeting (baseline) | 0.0012 | 0.0011 | 0.13 pp | 0.12 pp | 11.2% | 31.0% | 31.2% |
+
+**Business read (conversion):** treating only the top 30% of users ranked by the S-learner captures **90.5%** of all incremental conversions (Poisson bootstrap 95% CI 88.0%-92.9%, 100 reps). Random targeting captures 30% by construction; ranking by the response model captures 92.1% (90.2%-94.1%). The intervals overlap, so at a 30% budget the uplift model is not clearly better than the response baseline. At a 10% budget the response model is also ahead: S-learner 70.5% vs response model 73.4% (best learner on test: Response model (baseline), Qini 0.1920). On this dataset most of the heterogeneity in uplift follows baseline propensity.
 
 ## 6. Recommendations
 

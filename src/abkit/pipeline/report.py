@@ -253,7 +253,17 @@ def _uplift_section(u: dict[str, Any]) -> list[str]:
             f"(Poisson bootstrap 95% CI {pct(cap['ci_low'])}-{pct(cap['ci_high'])}, "
             f"{b['n_boot']} reps). Random targeting captures 30% by construction; ranking by "
             f"the response model captures {pct(resp['point'])} "
-            f"({pct(resp['ci_low'])}-{pct(resp['ci_high'])}).",
+            f"({pct(resp['ci_low'])}-{pct(resp['ci_high'])}). "
+            + ("The intervals overlap, so at a 30% budget the uplift model is not clearly better "
+               "than the response baseline. "
+               if cap["ci_low"] <= resp["ci_high"] and resp["ci_low"] <= cap["ci_high"] else "")
+            + ("At a 10% budget the uplift model is ahead: "
+               if r["test"][best]["capture_at_10"] > r["test"]["response_model"]["capture_at_10"]
+               else "At a 10% budget the response model is also ahead: ")
+            + f"{LABEL[best]} {pct(r['test'][best]['capture_at_10'])}"
+            f" vs response model {pct(r['test']['response_model']['capture_at_10'])} (best "
+            f"learner on test: {LABEL[order[0]]}, Qini {r['test'][order[0]]['qini_auc']:.4f}). "
+            "On this dataset most of the heterogeneity in uplift follows baseline propensity.",
             "",
         ]
     return L

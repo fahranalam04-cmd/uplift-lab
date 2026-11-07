@@ -50,6 +50,9 @@ extend-exclude = ["notebooks"]
 select = ["E", "F", "W", "I", "B", "UP", "N", "SIM", "NPY"]
 ignore = ["N803", "N806"]  # X, T, Y are conventional names in causal inference code
 
+[tool.ruff.lint.per-file-ignores]
+"src/abkit/pipeline/report.py" = ["E501"]  # long f-string report template lines
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"

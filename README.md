@@ -49,7 +49,7 @@ CI by 17%, the precision of a 31% larger experiment.
 
 ## Results
 
-Full population (13,979,592 users), CPU only, 4 threads, peak RAM 2.1 GB. Sources in brackets.
+Full population (13,979,592 users), CPU only, 4 threads, peak RAM 2.0 GB [`readout.json: peak_ram_gb`]. Sources in brackets.
 
 | Question | Baseline | This repo |
 |---|---|---|

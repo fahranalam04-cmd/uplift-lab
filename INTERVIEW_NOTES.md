@@ -6,7 +6,7 @@ Every number here comes from `reports/*.json` (file and key in brackets).
 
 **Sufficient statistics everywhere.** Every estimator in `abkit` (Welch, Lin, CUPAC, AIPW) reduces to
 per-arm counts, means and covariances, and `MomentAccumulator` builds those from streamed batches.
-The 13.98M-row readout is therefore one pass over Parquet at ~2 GB peak RAM
+The 13.98M-row readout is therefore one pass over Parquet at 2.0 GB peak RAM
 [`readout.json: peak_ram_gb`], and the same code is unit-tested on 3,000-row arrays against
 statsmodels. A separate "big data" code path would have needed its own validation.
 
