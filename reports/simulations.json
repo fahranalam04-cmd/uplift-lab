@@ -1,0 +1,287 @@
+{
+  "bank_size": 2096937,
+  "seed": 20261107,
+  "hardware": "CPU only (i7-11800H, 4 threads)",
+  "aa": {
+    "n_sims": 10000,
+    "n_users_per_sim": 100000,
+    "alpha": 0.05,
+    "design": "resample control-arm users with replacement; Bernoulli(0.85) fake assignment",
+    "false_positive_rate": {
+      "visit_welch": {
+        "rate": 0.0509,
+        "ci_low": 0.046761955957285946,
+        "ci_high": 0.05538295137925577,
+        "k": 509,
+        "n_sims": 10000
+      },
+      "visit_cupac": {
+        "rate": 0.0491,
+        "ci_low": 0.04503539168321397,
+        "ci_high": 0.05351089804746218,
+        "k": 491,
+        "n_sims": 10000
+      },
+      "visit_bootstrap": {
+        "rate": 0.0526,
+        "ci_low": 0.0483939705288705,
+        "ci_high": 0.057149631213210914,
+        "k": 526,
+        "n_sims": 10000
+      },
+      "visit_hausman_raw_vs_cupac": {
+        "rate": 0.0461,
+        "ci_low": 0.0421613141098896,
+        "ci_high": 0.05038727961101061,
+        "k": 461,
+        "n_sims": 10000
+      },
+      "conversion_welch": {
+        "rate": 0.0537,
+        "ci_low": 0.049450660112119696,
+        "ci_high": 0.05829209683354622,
+        "k": 537,
+        "n_sims": 10000
+      },
+      "conversion_cupac": {
+        "rate": 0.054,
+        "ci_low": 0.04973893838942255,
+        "ci_high": 0.058603588157220964,
+        "k": 540,
+        "n_sims": 10000
+      },
+      "conversion_bootstrap": {
+        "rate": 0.0552,
+        "ci_low": 0.0508924294278944,
+        "ci_high": 0.05984917552265949,
+        "k": 552,
+        "n_sims": 10000
+      },
+      "conversion_hausman_raw_vs_cupac": {
+        "rate": 0.0538,
+        "ci_low": 0.04954674862078317,
+        "ci_high": 0.05839593152520862,
+        "k": 538,
+        "n_sims": 10000
+      }
+    },
+    "p_value_uniformity_ks": {
+      "visit_welch": {
+        "statistic": 0.007624142141292617,
+        "p_value": 0.6035332559146531
+      },
+      "visit_cupac": {
+        "statistic": 0.00952716188850955,
+        "p_value": 0.3221377863640986
+      },
+      "conversion_welch": {
+        "statistic": 0.0071547845413825195,
+        "p_value": 0.682550212464955
+      },
+      "conversion_cupac": {
+        "statistic": 0.007405596352360988,
+        "p_value": 0.6402777915938316
+      }
+    },
+    "mean_se_ratio_cupac_vs_raw": {
+      "visit": 0.8348137911605165,
+      "conversion": 0.9382906585746303
+    }
+  },
+  "peeking": {
+    "metric": "visit (control-arm base rate)",
+    "base_rate": 0.03820095691954503,
+    "n_sims": 5000,
+    "n_users_per_sim": 200000,
+    "max_looks": 1000,
+    "msprt_tau2": 1.1452802347871307e-05,
+    "msprt_tau2_rule": "tau = fixed-horizon MDE at n_users (80% power, alpha 0.05)",
+    "aa_false_positive_rate_naive_by_looks": {
+      "1": {
+        "rate": 0.053,
+        "ci_low": 0.047126291449339705,
+        "ci_high": 0.05956003408954136,
+        "k": 265,
+        "n_sims": 5000
+      },
+      "2": {
+        "rate": 0.092,
+        "ci_low": 0.08429893153598811,
+        "ci_high": 0.1003275132511785,
+        "k": 460,
+        "n_sims": 5000
+      },
+      "5": {
+        "rate": 0.1528,
+        "ci_low": 0.14309399770203246,
+        "ci_high": 0.1630390945286152,
+        "k": 764,
+        "n_sims": 5000
+      },
+      "10": {
+        "rate": 0.2074,
+        "ci_low": 0.19638855701286329,
+        "ci_high": 0.21886070216538417,
+        "k": 1037,
+        "n_sims": 5000
+      },
+      "20": {
+        "rate": 0.2638,
+        "ci_low": 0.25176953616492526,
+        "ci_high": 0.2761931262339198,
+        "k": 1319,
+        "n_sims": 5000
+      },
+      "50": {
+        "rate": 0.348,
+        "ci_low": 0.33491812572652674,
+        "ci_high": 0.3613152556647706,
+        "k": 1740,
+        "n_sims": 5000
+      },
+      "100": {
+        "rate": 0.4006,
+        "ci_low": 0.3870988967923483,
+        "ci_high": 0.414253722354329,
+        "k": 2003,
+        "n_sims": 5000
+      },
+      "200": {
+        "rate": 0.4604,
+        "ci_low": 0.44662016816036504,
+        "ci_high": 0.4742406338336835,
+        "k": 2302,
+        "n_sims": 5000
+      },
+      "500": {
+        "rate": 0.5454,
+        "ci_low": 0.5315686125459422,
+        "ci_high": 0.5591616801174466,
+        "k": 2727,
+        "n_sims": 5000
+      },
+      "1000": {
+        "rate": 0.6564,
+        "ci_low": 0.6431208594059883,
+        "ci_high": 0.6694390034255979,
+        "k": 3282,
+        "n_sims": 5000
+      }
+    },
+    "aa_false_positive_rate_msprt": {
+      "rate": 0.0234,
+      "ci_low": 0.019561396795909347,
+      "ci_high": 0.027970376698119102,
+      "k": 117,
+      "n_sims": 5000
+    },
+    "ab_injected_abs_lift": 0.0033841989226213206,
+    "ab_injected_rel_lift": 0.08858937564702309,
+    "ab_power_fixed_horizon_final_look": {
+      "rate": 0.7982,
+      "ci_low": 0.786848510859184,
+      "ci_high": 0.8090936317007841,
+      "k": 3991,
+      "n_sims": 5000
+    },
+    "ab_power_msprt_any_look": {
+      "rate": 0.5594,
+      "ci_low": 0.5455987147000932,
+      "ci_high": 0.5731100823088339,
+      "k": 2797,
+      "n_sims": 5000
+    },
+    "ab_msprt_median_stop_n": 106000.0,
+    "ab_msprt_mean_stop_fraction": 0.5378827314980336
+  },
+  "power": {
+    "metric": "visit",
+    "base_rate": 0.03820095691954503,
+    "rel_lift": 0.1,
+    "abs_lift": 0.003820095691954503,
+    "n_sims_per_point": 2000,
+    "variance_reduction_input": 0.3091522280273694,
+    "variance_reduction_source": "readout.json adjusted.visit.cupac.variance_reduction",
+    "grid": [
+      {
+        "n_users": 50000,
+        "analytic_power_raw": 0.35216620502016827,
+        "simulated_power_raw": {
+          "rate": 0.356,
+          "ci_low": 0.3353097453061949,
+          "ci_high": 0.377242364310806,
+          "k": 712,
+          "n_sims": 2000
+        },
+        "analytic_power_cupac": 0.4764928199559824,
+        "simulated_power_cupac": {
+          "rate": 0.475,
+          "ci_low": 0.45318320659358535,
+          "ci_high": 0.49691264577047733,
+          "k": 950,
+          "n_sims": 2000
+        }
+      },
+      {
+        "n_users": 100000,
+        "analytic_power_raw": 0.6081316820359614,
+        "simulated_power_raw": {
+          "rate": 0.5975,
+          "ci_low": 0.5758404814872059,
+          "ci_high": 0.6187856942929498,
+          "k": 1195,
+          "n_sims": 2000
+        },
+        "analytic_power_cupac": 0.766775664048237,
+        "simulated_power_cupac": {
+          "rate": 0.7625,
+          "ci_low": 0.7433576088948528,
+          "ci_high": 0.7806359412824895,
+          "k": 1525,
+          "n_sims": 2000
+        }
+      },
+      {
+        "n_users": 200000,
+        "analytic_power_raw": 0.8849165463324664,
+        "simulated_power_raw": {
+          "rate": 0.881,
+          "ci_low": 0.8660740142339233,
+          "ci_high": 0.8944651957377622,
+          "k": 1762,
+          "n_sims": 2000
+        },
+        "analytic_power_cupac": 0.9672451966944713,
+        "simulated_power_cupac": {
+          "rate": 0.9625,
+          "ci_low": 0.9532479878280715,
+          "ci_high": 0.9699787434367697,
+          "k": 1925,
+          "n_sims": 2000
+        }
+      },
+      {
+        "n_users": 400000,
+        "analytic_power_raw": 0.993942870852298,
+        "simulated_power_raw": {
+          "rate": 0.9955,
+          "ci_low": 0.9914694867812403,
+          "ci_high": 0.9976307193630382,
+          "k": 1991,
+          "n_sims": 2000
+        },
+        "analytic_power_cupac": 0.999682832247634,
+        "simulated_power_cupac": {
+          "rate": 0.999,
+          "ci_low": 0.9963610657309616,
+          "ci_high": 0.999725721082348,
+          "k": 1998,
+          "n_sims": 2000
+        }
+      }
+    ],
+    "max_abs_gap_raw": 0.01063168203596132,
+    "max_abs_gap_cupac": 0.004745196694471265
+  },
+  "runtime_seconds": 481.3
+}
