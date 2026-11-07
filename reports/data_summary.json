@@ -1,0 +1,78 @@
+{
+  "source_url": "https://huggingface.co/datasets/criteo/criteo-uplift/resolve/main/criteo-research-uplift-v2.1.csv.gz",
+  "source_sha256": "2716e1bf0fd157a93b5bf86924d9088419dfbac2022c6cd90030220634f616dc",
+  "license": "CC BY-NC-SA 4.0 (non-commercial research use)",
+  "parquet_path": "D:\\ml-portfolio\\data\\uplift\\criteo_uplift_v21.parquet",
+  "parquet_bytes": 203002147,
+  "n_rows": 13979592,
+  "n_treatment": 11882655,
+  "n_control": 2096937,
+  "treatment_share": 0.8500001287591226,
+  "visit_rate": 0.046992000911042324,
+  "conversion_rate": 0.002916680257907384,
+  "exposure_rate": 0.03063122299992732,
+  "control_exposed": 0,
+  "buckets": [
+    {
+      "bucket": 0,
+      "n": 1397962,
+      "treatment_share": 0.8499994992710818,
+      "visit_rate": 0.04699269364975586
+    },
+    {
+      "bucket": 1,
+      "n": 1397961,
+      "treatment_share": 0.8499993919715929,
+      "visit_rate": 0.0469927272649237
+    },
+    {
+      "bucket": 2,
+      "n": 1397960,
+      "treatment_share": 0.85,
+      "visit_rate": 0.04699276088013963
+    },
+    {
+      "bucket": 3,
+      "n": 1397960,
+      "treatment_share": 0.85,
+      "visit_rate": 0.04699276088013963
+    },
+    {
+      "bucket": 4,
+      "n": 1397959,
+      "treatment_share": 0.8499998927007159,
+      "visit_rate": 0.04699207916684252
+    },
+    {
+      "bucket": 5,
+      "n": 1397958,
+      "treatment_share": 0.8500005007303509,
+      "visit_rate": 0.046991397452570104
+    },
+    {
+      "bucket": 6,
+      "n": 1397958,
+      "treatment_share": 0.8500005007303509,
+      "visit_rate": 0.046991397452570104
+    },
+    {
+      "bucket": 7,
+      "n": 1397958,
+      "treatment_share": 0.8500005007303509,
+      "visit_rate": 0.046991397452570104
+    },
+    {
+      "bucket": 8,
+      "n": 1397958,
+      "treatment_share": 0.8500005007303509,
+      "visit_rate": 0.046991397452570104
+    },
+    {
+      "bucket": 9,
+      "n": 1397958,
+      "treatment_share": 0.8500005007303509,
+      "visit_rate": 0.046991397452570104
+    }
+  ],
+  "conversion_seconds": 36.9
+}

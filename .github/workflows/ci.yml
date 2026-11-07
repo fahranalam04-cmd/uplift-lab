@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - name: Install (CPU only, no dataset download)
+        run: uv sync --all-extras --frozen
+      - name: Ruff
+        run: uv run ruff check src tests app
+      - name: Pytest
+        run: uv run pytest -q

@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.pytest_cache/
+.ruff_cache/
+
+# Environments (the venv lives on D:/ml-portfolio/venvs/uplift)
+.venv
+
+# Data, models and scratch artifacts never go in git
+data/
+models/
+mlruns/
+*.parquet
+*.csv.gz
+*.lgb
+*_quick.json
+.streamlit/secrets.toml

@@ -1,0 +1,55 @@
+[project]
+name = "uplift-lab"
+version = "0.1.0"
+description = "Experimentation and causal-inference toolkit (abkit) applied to the 13.98M-user Criteo uplift randomized trial."
+authors = [{ name = "Fahran Alam", email = "fahran.alam04@gmail.com" }]
+license = "MIT"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pandas>=2.1",
+    "statsmodels>=0.14",
+    "scikit-learn>=1.4",
+]
+
+[project.optional-dependencies]
+# Everything needed for the Criteo pipeline, figures and the Streamlit app.
+pipeline = [
+    "duckdb>=1.0",
+    "pyarrow>=15",
+    "lightgbm>=4.3",
+    "matplotlib>=3.8",
+    "streamlit>=1.35",
+    "psutil>=7.2.2",
+]
+
+[project.scripts]
+uplift-lab = "abkit.pipeline.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.5",
+    "scikit-uplift>=0.5.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "abkit"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "N", "SIM", "NPY"]
+ignore = ["N803", "N806"]  # X, T, Y are conventional names in causal inference code
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

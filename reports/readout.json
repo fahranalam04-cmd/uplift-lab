@@ -1,0 +1,914 @@
+{
+  "scope": "all 13,979,592 users (full population), CPU only, 4 threads",
+  "srm": {
+    "counts": [
+      11882655,
+      2096937
+    ],
+    "expected_ratios": [
+      0.85,
+      0.15000000000000002
+    ],
+    "observed_ratios": [
+      0.8500001287591226,
+      0.1499998712408774
+    ],
+    "chi2": 1.817775848947767e-06,
+    "dof": 1,
+    "p_value": 0.9989242531217909,
+    "threshold": 0.001,
+    "mismatch": false,
+    "design_ratio_source": "Criteo v2.1 dataset card: treatment ratio .85",
+    "detectable_share_deviation": 0.00031424853909432744
+  },
+  "balance": {
+    "smd": {
+      "f0": -0.006865619284389811,
+      "f1": 0.0239943939767806,
+      "f2": -0.006240988897816135,
+      "f3": -0.04883634033708873,
+      "f4": 0.007965660618610286,
+      "f5": -0.030556830393816153,
+      "f6": -0.04044806880267142,
+      "f7": 0.0212695301514096,
+      "f8": -0.022433336149548535,
+      "f9": 0.024001057716329415,
+      "f10": 0.010563462895780421,
+      "f11": -0.005159528336814784
+    },
+    "max_abs_smd": 0.04883634033708873,
+    "smd_se_under_randomization": 0.000749027586326405,
+    "max_abs_smd_z": 65.199655164379,
+    "n_features_abs_smd_over_0_1": 0,
+    "treatment_predictability_auc": {
+      "auc": 0.5105766360895712,
+      "se": 0.0008040173150990188,
+      "ci_low": 0.5090007911090305,
+      "ci_high": 0.5121524810701118,
+      "n": 1001835
+    },
+    "treatment_auc_sample": "seeded ~7.16% Bernoulli subsample of all rows, HistGradientBoosting, 3-fold CV"
+  },
+  "file_blocks": {
+    "n_blocks": 13,
+    "note": "contiguous runs of a single arm in original CSV order",
+    "blocks": [
+      {
+        "block": 0,
+        "first_row": 0,
+        "last_row": 5571798,
+        "treatment": 1,
+        "n": 5571799,
+        "visit_rate": 0.025020644140249855,
+        "conversion_rate": 0.004760042492559405
+      },
+      {
+        "block": 1,
+        "first_row": 5571799,
+        "last_row": 6802710,
+        "treatment": 0,
+        "n": 1230912,
+        "visit_rate": 0.0280702438517132,
+        "conversion_rate": 0.0028978513492434878
+      },
+      {
+        "block": 2,
+        "first_row": 6802711,
+        "last_row": 8206082,
+        "treatment": 1,
+        "n": 1403372,
+        "visit_rate": 0.06288282793158194,
+        "conversion_rate": 0.0014607673517784308
+      },
+      {
+        "block": 3,
+        "first_row": 8206083,
+        "last_row": 8508130,
+        "treatment": 0,
+        "n": 302048,
+        "visit_rate": 0.05975540311473673,
+        "conversion_rate": 0.0006787000741603984
+      },
+      {
+        "block": 4,
+        "first_row": 8508131,
+        "last_row": 10219735,
+        "treatment": 1,
+        "n": 1711605,
+        "visit_rate": 0.08583522483283235,
+        "conversion_rate": 0.0020880985975151975
+      },
+      {
+        "block": 5,
+        "first_row": 10219736,
+        "last_row": 10503389,
+        "treatment": 0,
+        "n": 283654,
+        "visit_rate": 0.06686315017591855,
+        "conversion_rate": 0.00046183025799036853
+      },
+      {
+        "block": 6,
+        "first_row": 10503390,
+        "last_row": 12546011,
+        "treatment": 1,
+        "n": 2042622,
+        "visit_rate": 0.06788040077899876,
+        "conversion_rate": 0.0012586763483405153
+      },
+      {
+        "block": 7,
+        "first_row": 12546012,
+        "last_row": 12622819,
+        "treatment": 0,
+        "n": 76808,
+        "visit_rate": 0.0004817206540985314,
+        "conversion_rate": 2.603895427559629e-05
+      },
+      {
+        "block": 8,
+        "first_row": 12622820,
+        "last_row": 12739416,
+        "treatment": 1,
+        "n": 116597,
+        "visit_rate": 0.00018010754993696236,
+        "conversion_rate": 8.576549996998207e-06
+      },
+      {
+        "block": 9,
+        "first_row": 12739417,
+        "last_row": 12759991,
+        "treatment": 0,
+        "n": 20575,
+        "visit_rate": 4.860267314702309e-05,
+        "conversion_rate": 0.0
+      },
+      {
+        "block": 10,
+        "first_row": 12759992,
+        "last_row": 12985565,
+        "treatment": 1,
+        "n": 225574,
+        "visit_rate": 0.00012856091570837065,
+        "conversion_rate": 3.9898215219839166e-05
+      },
+      {
+        "block": 11,
+        "first_row": 12985566,
+        "last_row": 13168505,
+        "treatment": 0,
+        "n": 182940,
+        "visit_rate": 0.04646332130753252,
+        "conversion_rate": 0.0008636711490106045
+      },
+      {
+        "block": 12,
+        "first_row": 13168506,
+        "last_row": 13979591,
+        "treatment": 1,
+        "n": 811086,
+        "visit_rate": 0.07834680909299384,
+        "conversion_rate": 0.002446103125932392
+      }
+    ]
+  },
+  "itt": {
+    "n_treatment": 11882655,
+    "n_control": 2096937,
+    "control_exposed": 0,
+    "exposure_rate_treated": 0.036036727482199896,
+    "visit": {
+      "welch": {
+        "method": "welch",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.03820095691954503,
+        "treatment_mean": 0.048543360048743316,
+        "abs_effect": 0.010342403129198284,
+        "abs_se": 0.00014631645066032718,
+        "abs_ci_low": 0.010055628043717079,
+        "abs_ci_high": 0.010629178214679489,
+        "p_value": 0.0,
+        "rel_effect": 0.27073675539019615,
+        "rel_se": 0.004695919925528328,
+        "rel_ci_low": 0.2615329214618766,
+        "rel_ci_high": 0.2799405893185157,
+        "alpha": 0.05,
+        "df": 3103528.395331994,
+        "abs_ci_width": 0.00057355017096241
+      },
+      "bootstrap": {
+        "n_boot": 10000,
+        "abs_effect": 0.010342403129198284,
+        "abs_se": 0.00014516934470165451,
+        "abs_ci_low": 0.01005901226789817,
+        "abs_ci_high": 0.01062660545979971,
+        "rel_effect": 0.27073675539019604,
+        "rel_ci_low": 0.26174113432166224,
+        "rel_ci_high": 0.279877221523842,
+        "alpha": 0.05
+      },
+      "mde_at_this_n": 0.0004025405264357565,
+      "cace_raw": {
+        "estimate": 0.2869961800714818,
+        "se": 0.004022446869265215,
+        "ci_low": 0.2791123290779961,
+        "ci_high": 0.2948800310649675,
+        "relative_to_control": 7.512800809575331,
+        "covariance_term": "included"
+      },
+      "cace_adjusted": {
+        "estimate": 0.19562742097684366,
+        "se": 0.0033837055359339603,
+        "ci_low": 0.1889954799921243,
+        "ci_high": 0.20225936196156302,
+        "relative_to_control": 4.7856400410938225,
+        "covariance_term": "omitted"
+      }
+    },
+    "conversion": {
+      "welch": {
+        "method": "welch",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.0019375880152813366,
+        "treatment_mean": 0.0030894610674129645,
+        "abs_effect": 0.0011518730521316279,
+        "abs_se": 3.437169028999274e-05,
+        "abs_ci_low": 0.0010845057530508462,
+        "abs_ci_high": 0.0012192403512124095,
+        "p_value": 3.5063591600193013e-246,
+        "rel_effect": 0.594488117725262,
+        "rel_se": 0.026335732292959248,
+        "rel_ci_low": 0.5428710309245734,
+        "rel_ci_high": 0.6461052045259505,
+        "alpha": 0.05,
+        "df": 3393975.1798946983,
+        "abs_ci_width": 0.00013473459816156332
+      },
+      "bootstrap": {
+        "n_boot": 10000,
+        "abs_effect": 0.0011518730521316279,
+        "abs_se": 3.4287717214405466e-05,
+        "abs_ci_low": 0.001084994004277414,
+        "abs_ci_high": 0.0012184975332813449,
+        "rel_effect": 0.5944881177252619,
+        "rel_ci_low": 0.5444414543383198,
+        "rel_ci_high": 0.6471318980970151,
+        "alpha": 0.05
+      },
+      "mde_at_this_n": 9.261020048694537e-05,
+      "cace_raw": {
+        "estimate": 0.03196386388639907,
+        "se": 0.000951030372411813,
+        "ci_low": 0.0300998786082682,
+        "ci_high": 0.03382784916452994,
+        "relative_to_control": 16.49672873411461,
+        "covariance_term": "included"
+      },
+      "cace_adjusted": {
+        "estimate": 0.02745708447561766,
+        "se": 0.000893299340104909,
+        "ci_low": 0.02570624994159864,
+        "ci_high": 0.02920791900963668,
+        "relative_to_control": 13.324420413666155,
+        "covariance_term": "omitted"
+      }
+    }
+  },
+  "nuisance_models": {
+    "params": {
+      "objective": "binary",
+      "learning_rate": 0.05,
+      "num_leaves": 63,
+      "min_child_samples": 500,
+      "subsample": 0.8,
+      "subsample_freq": 1,
+      "colsample_bytree": 0.9,
+      "n_estimators": 2000,
+      "n_jobs": 4,
+      "verbose": -1
+    },
+    "folds": {
+      "propensity_fold0": {
+        "rows": 2002708,
+        "best_iteration": 61
+      },
+      "pooled_visit_fold0": {
+        "rows": 2002708,
+        "best_iteration": 173
+      },
+      "arm1_visit_fold0": {
+        "rows": 1702324,
+        "best_iteration": 137
+      },
+      "arm0_visit_fold0": {
+        "rows": 300384,
+        "best_iteration": 100
+      },
+      "pooled_conversion_fold0": {
+        "rows": 2002708,
+        "best_iteration": 91
+      },
+      "arm1_conversion_fold0": {
+        "rows": 1702324,
+        "best_iteration": 75
+      },
+      "arm0_conversion_fold0": {
+        "rows": 300384,
+        "best_iteration": 86
+      },
+      "propensity_fold1": {
+        "rows": 2003058,
+        "best_iteration": 44
+      },
+      "pooled_visit_fold1": {
+        "rows": 2003058,
+        "best_iteration": 148
+      },
+      "arm1_visit_fold1": {
+        "rows": 1702335,
+        "best_iteration": 200
+      },
+      "arm0_visit_fold1": {
+        "rows": 300723,
+        "best_iteration": 92
+      },
+      "pooled_conversion_fold1": {
+        "rows": 2003058,
+        "best_iteration": 90
+      },
+      "arm1_conversion_fold1": {
+        "rows": 1702335,
+        "best_iteration": 100
+      },
+      "arm0_conversion_fold1": {
+        "rows": 300723,
+        "best_iteration": 62
+      }
+    },
+    "oof_quality": {
+      "visit": {
+        "oof_auc": 0.9464499273579599,
+        "oof_r2": 0.3345312922103688,
+        "n": 13979592
+      },
+      "conversion": {
+        "oof_auc": 0.9576190427026094,
+        "oof_r2": 0.12664036580973403,
+        "n": 13979592
+      },
+      "propensity": {
+        "oof_auc": 0.5095015235372001,
+        "oof_r2": 0.000592578666486987,
+        "n": 13979592,
+        "quantiles": {
+          "0.0": 0.7824347615242004,
+          "0.01": 0.841122567653656,
+          "0.1": 0.8457507491111755,
+          "0.5": 0.8485795855522156,
+          "0.9": 0.853581428527832,
+          "0.99": 0.8931758403778076,
+          "1.0": 0.959802508354187
+        },
+        "share_clipped": 0.0
+      }
+    },
+    "train_rows_per_fold_cap": 2000000,
+    "propensity_clip": 0.01,
+    "crossfit": "2 folds by bucket parity; every row is scored by models trained on a sample of the other fold only"
+  },
+  "adjusted": {
+    "visit": {
+      "raw": {
+        "method": "raw",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.038200956919514625,
+        "treatment_mean": 0.048543360049182985,
+        "abs_effect": 0.01034240312966836,
+        "abs_se": 0.00014631645066032176,
+        "abs_ci_low": 0.010055628156028397,
+        "abs_ci_high": 0.010629178103308322,
+        "p_value": 0.0,
+        "rel_effect": 0.27073675540271697,
+        "rel_se": 0.004695919925572642,
+        "rel_ci_low": 0.26153292147431056,
+        "rel_ci_high": 0.27994058933112337,
+        "alpha": 0.05,
+        "df": null,
+        "abs_ci_width": 0.0005735499472799242,
+        "se_ratio": 1.0,
+        "ci_width_reduction": 0.0,
+        "variance_reduction": 0.0,
+        "sample_size_saving": 0.0,
+        "effective_sample_multiplier": 1.0,
+        "covariates": []
+      },
+      "lin_12_features": {
+        "method": "lin_12_features",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.04028605910905258,
+        "treatment_mean": 0.04801986085253668,
+        "abs_effect": 0.007733801743484099,
+        "abs_se": 0.00012616706581666839,
+        "abs_ci_low": 0.007486518838448334,
+        "abs_ci_high": 0.007981084648519864,
+        "p_value": 0.0,
+        "rel_effect": 0.1919721589681691,
+        "rel_se": 0.003633078299270424,
+        "rel_ci_low": 0.18485145634858505,
+        "rel_ci_high": 0.19909286158775316,
+        "alpha": 0.05,
+        "df": null,
+        "abs_ci_width": 0.0004945658100715296,
+        "se_ratio": 0.8622889992702816,
+        "ci_width_reduction": 0.13771100072971842,
+        "variance_reduction": 0.2564576817374563,
+        "sample_size_saving": 0.2564576817374563,
+        "effective_sample_multiplier": 1.3449133632860713,
+        "covariates": [
+          "f0",
+          "f1",
+          "f2",
+          "f3",
+          "f4",
+          "f5",
+          "f6",
+          "f7",
+          "f8",
+          "f9",
+          "f10",
+          "f11"
+        ],
+        "hausman_vs_raw": {
+          "difference": 0.0026086013861842602,
+          "se_difference": 7.409706631876083e-05,
+          "z": 35.20519118749215,
+          "p_value": 1.665335839898979e-271
+        },
+        "shift_vs_raw_relative": -0.25222391290291035
+      },
+      "cupac": {
+        "method": "cupac",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.04127626995773438,
+        "treatment_mean": 0.04793626021206586,
+        "abs_effect": 0.006659990254331477,
+        "abs_se": 0.0001216142142423624,
+        "abs_ci_low": 0.0064216307744083085,
+        "abs_ci_high": 0.006898349734254646,
+        "p_value": 0.0,
+        "rel_effect": 0.16135155286926606,
+        "rel_se": 0.003342728887568208,
+        "rel_ci_low": 0.15479992463955072,
+        "rel_ci_high": 0.1679031810989814,
+        "alpha": 0.05,
+        "df": null,
+        "abs_ci_width": 0.00047671895984633707,
+        "se_ratio": 0.8311725284034781,
+        "ci_width_reduction": 0.1688274715965219,
+        "variance_reduction": 0.3091522280273694,
+        "sample_size_saving": 0.3091522280273694,
+        "effective_sample_multiplier": 1.4474968879824615,
+        "covariates": [
+          "pred_visit"
+        ],
+        "hausman_vs_raw": {
+          "difference": 0.0036824128753368823,
+          "se_difference": 8.13540818155251e-05,
+          "z": 45.26402109345857,
+          "p_value": 0.0
+        },
+        "shift_vs_raw_relative": -0.356050023303913
+      },
+      "cupac_plus_lin": {
+        "method": "cupac_plus_lin",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.040878005720658084,
+        "treatment_mean": 0.047927777778446194,
+        "abs_effect": 0.00704977205778811,
+        "abs_se": 0.00012147804973512477,
+        "abs_ci_low": 0.0068116794553951,
+        "abs_ci_high": 0.0072878646601811205,
+        "p_value": 0.0,
+        "rel_effect": 0.17245880598880198,
+        "rel_se": 0.003399061604381575,
+        "rel_ci_low": 0.16579676766298115,
+        "rel_ci_high": 0.1791208443146228,
+        "alpha": 0.05,
+        "df": null,
+        "abs_ci_width": 0.00047618520478602024,
+        "se_ratio": 0.8302419118759234,
+        "ci_width_reduction": 0.16975808812407656,
+        "variance_reduction": 0.31069836776461135,
+        "sample_size_saving": 0.31069836776461135,
+        "effective_sample_multiplier": 1.4507436994701783,
+        "covariates": [
+          "pred_visit",
+          "f0",
+          "f1",
+          "f2",
+          "f3",
+          "f4",
+          "f5",
+          "f6",
+          "f7",
+          "f8",
+          "f9",
+          "f10",
+          "f11"
+        ],
+        "hausman_vs_raw": {
+          "difference": 0.003292631071880249,
+          "se_difference": 8.155726311239807e-05,
+          "z": 40.37201527155849,
+          "p_value": 0.0
+        },
+        "shift_vs_raw_relative": -0.3183622829818886
+      },
+      "aipw": {
+        "method": "aipw",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.040484062501902646,
+        "treatment_mean": 0.047919933502698124,
+        "abs_effect": 0.007435871000795478,
+        "abs_se": 0.00012694027273039648,
+        "abs_ci_low": 0.0071870726380562095,
+        "abs_ci_high": 0.007684669363534747,
+        "p_value": 0.0,
+        "rel_effect": 0.18367403223048606,
+        "rel_se": 0.0036254493422590043,
+        "rel_ci_low": 0.176568282091884,
+        "rel_ci_high": 0.19077978236908813,
+        "alpha": 0.05,
+        "df": null,
+        "abs_ci_width": 0.0004975967254785378,
+        "se_ratio": 0.8675734830739731,
+        "ci_width_reduction": 0.13242651692602692,
+        "variance_reduction": 0.2473162514668945,
+        "sample_size_saving": 0.2473162514668945,
+        "effective_sample_multiplier": 1.328579236563677,
+        "covariates": "cross-fitted mu1, mu0, e (LightGBM)",
+        "hausman_vs_raw": {
+          "difference": 0.002906532128872881,
+          "se_difference": 7.276448923044077e-05,
+          "z": 39.9443761594762,
+          "p_value": 0.0
+        },
+        "shift_vs_raw_relative": -0.2810306359587902
+      }
+    },
+    "conversion": {
+      "raw": {
+        "method": "raw",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.001937588015271113,
+        "treatment_mean": 0.003089461067423407,
+        "abs_effect": 0.001151873052152294,
+        "abs_se": 3.437169028999236e-05,
+        "abs_ci_low": 0.0010845057770961439,
+        "abs_ci_high": 0.0012192403272084443,
+        "p_value": 3.194807412556368e-246,
+        "rel_effect": 0.5944881177390646,
+        "rel_se": 0.026335732293303122,
+        "rel_ci_low": 0.5428710309377021,
+        "rel_ci_high": 0.6461052045404272,
+        "alpha": 0.05,
+        "df": null,
+        "abs_ci_width": 0.0001347345501123004,
+        "se_ratio": 1.0,
+        "ci_width_reduction": 0.0,
+        "variance_reduction": 0.0,
+        "sample_size_saving": 0.0,
+        "effective_sample_multiplier": 1.0,
+        "covariates": []
+      },
+      "lin_12_features": {
+        "method": "lin_12_features",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.0020501991057509526,
+        "treatment_mean": 0.003051857475180946,
+        "abs_effect": 0.0010016583694299934,
+        "abs_se": 3.239896401964934e-05,
+        "abs_ci_low": 0.0009381575668150717,
+        "abs_ci_high": 0.0010651591720449152,
+        "p_value": 7.197776414252892e-210,
+        "rel_effect": 0.48856638685495046,
+        "rel_se": 0.02206408108590475,
+        "rel_ci_low": 0.44532158257460575,
+        "rel_ci_high": 0.5318111911352952,
+        "alpha": 0.05,
+        "df": null,
+        "abs_ci_width": 0.00012700160522984352,
+        "se_ratio": 0.9426060733790157,
+        "ci_width_reduction": 0.057393926620984304,
+        "variance_reduction": 0.11149379042899366,
+        "sample_size_saving": 0.11149379042899366,
+        "effective_sample_multiplier": 1.125484537111818,
+        "covariates": [
+          "f0",
+          "f1",
+          "f2",
+          "f3",
+          "f4",
+          "f5",
+          "f6",
+          "f7",
+          "f8",
+          "f9",
+          "f10",
+          "f11"
+        ],
+        "hausman_vs_raw": {
+          "difference": 0.00015021468272230065,
+          "se_difference": 1.1476943140253966e-05,
+          "z": 13.088387812556213,
+          "p_value": 3.836649355945407e-39
+        },
+        "shift_vs_raw_relative": -0.13040906065266655
+      },
+      "cupac": {
+        "method": "cupac",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.0020913018081584246,
+        "treatment_mean": 0.0030542486812295024,
+        "abs_effect": 0.0009629468730710778,
+        "abs_se": 3.2260664188004074e-05,
+        "abs_ci_low": 0.0008997171331452487,
+        "abs_ci_high": 0.0010261766129969069,
+        "p_value": 9.059222577356994e-196,
+        "rel_effect": 0.4604533259209666,
+        "rel_se": 0.021179608051907946,
+        "rel_ci_low": 0.4189420569325525,
+        "rel_ci_high": 0.5019645949093807,
+        "alpha": 0.05,
+        "df": null,
+        "abs_ci_width": 0.00012645947985165818,
+        "se_ratio": 0.9385824181418586,
+        "ci_width_reduction": 0.06141758185814139,
+        "variance_reduction": 0.11906304435498127,
+        "sample_size_saving": 0.11906304435498127,
+        "effective_sample_multiplier": 1.1351550114818418,
+        "covariates": [
+          "pred_conversion"
+        ],
+        "hausman_vs_raw": {
+          "difference": 0.0001889261790812163,
+          "se_difference": 1.1860128141802965e-05,
+          "z": 15.929522583766614,
+          "p_value": 3.953641771156756e-57
+        },
+        "shift_vs_raw_relative": -0.16401649359554382
+      },
+      "cupac_plus_lin": {
+        "method": "cupac_plus_lin",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.002060658822162079,
+        "treatment_mean": 0.0030501222928656538,
+        "abs_effect": 0.000989463470703575,
+        "abs_se": 3.2157334927941146e-05,
+        "abs_ci_low": 0.0009264362524060184,
+        "abs_ci_high": 0.0010524906890011314,
+        "p_value": 6.718348976497033e-208,
+        "rel_effect": 0.48016850730554844,
+        "rel_se": 0.02168075803211972,
+        "rel_ci_low": 0.4376750024050663,
+        "rel_ci_high": 0.5226620122060306,
+        "alpha": 0.05,
+        "df": null,
+        "abs_ci_width": 0.00012605443659511305,
+        "se_ratio": 0.9355761865835284,
+        "ci_width_reduction": 0.06442381341647163,
+        "variance_reduction": 0.12469719909782295,
+        "sample_size_saving": 0.12469719909782295,
+        "effective_sample_multiplier": 1.1424617846181884,
+        "covariates": [
+          "pred_conversion",
+          "f0",
+          "f1",
+          "f2",
+          "f3",
+          "f4",
+          "f5",
+          "f6",
+          "f7",
+          "f8",
+          "f9",
+          "f10",
+          "f11"
+        ],
+        "hausman_vs_raw": {
+          "difference": 0.0001624095814487191,
+          "se_difference": 1.2137499895916444e-05,
+          "z": 13.380810120819065,
+          "p_value": 7.828938079730359e-41
+        },
+        "shift_vs_raw_relative": -0.14099607690730687
+      },
+      "aipw": {
+        "method": "aipw",
+        "n_treatment": 11882655,
+        "n_control": 2096937,
+        "control_mean": 0.00204796957367531,
+        "treatment_mean": 0.0030473015674316022,
+        "abs_effect": 0.000999331993756292,
+        "abs_se": 3.3602601581439124e-05,
+        "abs_ci_low": 0.0009334721048698228,
+        "abs_ci_high": 0.0010651918826427615,
+        "p_value": 2.3551513379360022e-194,
+        "rel_effect": 0.48796232453926514,
+        "rel_se": 0.023081242051172172,
+        "rel_ci_low": 0.44272392140051625,
+        "rel_ci_high": 0.533200727678014,
+        "alpha": 0.05,
+        "df": null,
+        "abs_ci_width": 0.0001317197777729387,
+        "se_ratio": 0.9776243559142866,
+        "ci_width_reduction": 0.022375644085713353,
+        "variance_reduction": 0.04425061872317615,
+        "sample_size_saving": 0.04425061872317615,
+        "effective_sample_multiplier": 1.0462993956261422,
+        "covariates": "cross-fitted mu1, mu0, e (LightGBM)",
+        "hausman_vs_raw": {
+          "difference": 0.00015254105839600197,
+          "se_difference": 7.230370692448628e-06,
+          "z": 21.097266638806676,
+          "p_value": 8.426869232137365e-99
+        },
+        "shift_vs_raw_relative": -0.13242870654103456
+      }
+    }
+  },
+  "post_stratified": {
+    "visit": {
+      "estimate": 0.0073994490238374865,
+      "se": 0.00013386302288241763,
+      "ci_low": 0.007137082318056771,
+      "ci_high": 0.0076618157296182016,
+      "n_strata": 10,
+      "strata": [
+        {
+          "stratum": 1,
+          "n": 1397960,
+          "treatment_share": 0.8493719419725886,
+          "treated_rate": 0.0005086795554612309,
+          "control_rate": 0.0004274072526261801
+        },
+        {
+          "stratum": 2,
+          "n": 1397960,
+          "treatment_share": 0.8514184955220464,
+          "treated_rate": 0.0005561861425634468,
+          "control_rate": 0.0004381087183634954
+        },
+        {
+          "stratum": 3,
+          "n": 1397959,
+          "treatment_share": 0.8460019213725152,
+          "treated_rate": 0.0007060259952852684,
+          "control_rate": 0.0005899211735250809
+        },
+        {
+          "stratum": 4,
+          "n": 1397959,
+          "treatment_share": 0.8486042866779355,
+          "treated_rate": 0.0012028855766685717,
+          "control_rate": 0.0007796073613834488
+        },
+        {
+          "stratum": 5,
+          "n": 1397959,
+          "treatment_share": 0.8488753962026068,
+          "treated_rate": 0.002273545053354153,
+          "control_rate": 0.0015430783940624615
+        },
+        {
+          "stratum": 6,
+          "n": 1397959,
+          "treatment_share": 0.8464976440653839,
+          "treated_rate": 0.004369727447651578,
+          "control_rate": 0.0035416375413579383
+        },
+        {
+          "stratum": 7,
+          "n": 1397959,
+          "treatment_share": 0.8473438777532102,
+          "treated_rate": 0.007877239665291183,
+          "control_rate": 0.006363427628896897
+        },
+        {
+          "stratum": 8,
+          "n": 1397959,
+          "treatment_share": 0.848477673522614,
+          "treated_rate": 0.01910066037902873,
+          "control_rate": 0.015404443353381612
+        },
+        {
+          "stratum": 9,
+          "n": 1397959,
+          "treatment_share": 0.8522538929968618,
+          "treated_rate": 0.07017532079475179,
+          "control_rate": 0.05487477183927802
+        },
+        {
+          "stratum": 10,
+          "n": 1397959,
+          "treatment_share": 0.861156156940225,
+          "treated_rate": 0.37365775616952457,
+          "control_rate": 0.3224711228348566
+        }
+      ]
+    },
+    "conversion": {
+      "estimate": 0.0009484769947617501,
+      "se": 3.6259086407077294e-05,
+      "ci_low": 0.0008774104907309893,
+      "ci_high": 0.001019543498792511,
+      "n_strata": 10,
+      "strata": [
+        {
+          "stratum": 1,
+          "n": 1397960,
+          "treatment_share": 0.8485071103608115,
+          "treated_rate": 6.40712742343272e-05,
+          "control_rate": 5.1940447915535385e-05
+        },
+        {
+          "stratum": 2,
+          "n": 1397960,
+          "treatment_share": 0.8650919911871584,
+          "treated_rate": 7.607304335171214e-05,
+          "control_rate": 4.2418715137118495e-05
+        },
+        {
+          "stratum": 3,
+          "n": 1397959,
+          "treatment_share": 0.8328978174610271,
+          "treated_rate": 6.011901847972744e-05,
+          "control_rate": 2.996549687074597e-05
+        },
+        {
+          "stratum": 4,
+          "n": 1397959,
+          "treatment_share": 0.8492988707108006,
+          "treated_rate": 7.83299713211234e-05,
+          "control_rate": 2.3733351054235453e-05
+        },
+        {
+          "stratum": 5,
+          "n": 1397959,
+          "treatment_share": 0.8479862428011122,
+          "treated_rate": 0.00012315998144164664,
+          "control_rate": 9.881934412189601e-05
+        },
+        {
+          "stratum": 6,
+          "n": 1397959,
+          "treatment_share": 0.8473982427238567,
+          "treated_rate": 0.00019077718912603788,
+          "control_rate": 0.00012656388429248445
+        },
+        {
+          "stratum": 7,
+          "n": 1397959,
+          "treatment_share": 0.8470556003430716,
+          "treated_rate": 0.0003124606785125858,
+          "control_rate": 0.00022449838641784762
+        },
+        {
+          "stratum": 8,
+          "n": 1397959,
+          "treatment_share": 0.8482623596257115,
+          "treated_rate": 0.0006737862571215581,
+          "control_rate": 0.0004478533680930404
+        },
+        {
+          "stratum": 9,
+          "n": 1397959,
+          "treatment_share": 0.850461994951211,
+          "treated_rate": 0.0018882826384817703,
+          "control_rate": 0.0011911140025257358
+        },
+        {
+          "stratum": 10,
+          "n": 1397959,
+          "treatment_share": 0.8630410476988238,
+          "treated_rate": 0.0270154231758746,
+          "control_rate": 0.01876080495970501
+        }
+      ]
+    }
+  },
+  "primary_estimator": "cupac_plus_lin",
+  "runtime_seconds": 419.0,
+  "peak_ram_gb": 2.09
+}
