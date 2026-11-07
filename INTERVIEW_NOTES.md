@@ -66,6 +66,20 @@ here, because visit uplift scales with baseline visit propensity.
 * **mSPRT is conservative and costs power.** A/A FPR is 2.34% (target ≤5%). With a true lift equal
   to the fixed-horizon MDE, mSPRT power by the planned horizon is 55.9%, vs 79.8% for the
   fixed-horizon test [`peeking.ab_power_*`]. That is the price of being allowed to peek.
+* **Uplift modelling barely beat the response-model baseline.** On test (n = 5,591,832) the
+  transformed-outcome learner, chosen on validation Qini, captures 86.3% (84.2-87.8) of incremental
+  visits in the top 30%, against 85.2% (83.6-86.6) for ranking by predicted visit probability
+  [`uplift.json: visit.test_bootstrap`]. The CIs overlap. The real gain is at the very top:
+  top-10% capture is 59.5% vs 49.7% (point estimates). For conversion the response model wins
+  (92.1% vs 90.5% for the chosen S-learner; Qini 0.192 vs 0.184). The honest story is that uplift
+  here mostly follows baseline propensity.
+* **Validation picked a model that was not best on test.** For visit, the S-learner has the best
+  test Qini (0.0924 vs 0.0862 for the chosen transformed outcome). I report the validation choice
+  rather than switching after looking at test, because switching would be test-set selection.
+* **IPW weighting reorders the models.** With inverse-propensity weights from the cross-fitted
+  propensity model, the chosen transformed-outcome learner drops below the response model on visit
+  Qini (0.069 vs 0.073), while the S-learner stays ahead (0.077) [`visit.test_ipw_weighted`]. Small
+  differences in uplift rankings are therefore fragile to the confounding found in the readout.
 
 ## Known weaknesses
 
